@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import Silly from '../Silly';
 
 export default function App() {
