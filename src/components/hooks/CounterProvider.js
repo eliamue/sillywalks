@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 export const CounterContext = createContext();
 
-const CounterProvider = ({ children }) => {
-  const [count, setCount] = useState(0);
+const CounterProvider = ({ children, initialCount = 0 }) => {
+  const [count, setCount] = useState(initialCount);
   const increment = () => setCount((prevCount) => prevCount + 1);
   const decrement = () => setCount((prevCount) => prevCount - 1);
 
@@ -14,7 +14,7 @@ const CounterProvider = ({ children }) => {
     </CounterContext.Provider>
   );
 };
-
+//These v could all be in their own hooks
 export const useDecrement = () => {
   const { decrement } = useContext(CounterContext);
   return decrement;
