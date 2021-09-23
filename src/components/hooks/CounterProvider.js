@@ -16,11 +16,23 @@ const CounterProvider = ({ children }) => {
 };
 
 export const useDecrement = () => {
-  const { decremenet } = 
-}
+  const { decrement } = useContext(CounterContext);
+  return decrement;
+};
+
+export const useIncrement = () => {
+  const { increment } = useContext(CounterContext);
+  return increment;
+};
+
+export const useCount = () => {
+  const { count } = useContext(CounterContext);
+  return count;
+};
 
 CounterProvider.propTypes = {
   children: PropTypes.node.isRequired,
+  initialCount: PropTypes.number,
 };
 
 export default CounterProvider;
